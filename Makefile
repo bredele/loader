@@ -13,6 +13,7 @@ doc: docco
 	git checkout gh-pages
 
 	git checkout master docs
+	
 	git add docs
 
 	#add versionning
