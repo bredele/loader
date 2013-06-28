@@ -19,6 +19,16 @@ function Loader() {
 }
 
 
+// Loader use
+// ----------------
+
+// Loader use the `express syntax` because...I love it! 
+// The use function load a commonjs package by name and pass all
+// the other parameters to the package constructor.
+//
+// To be load by the Loader, your commonjs package has to expose
+// a constructor function.
+
 /**
  * Load commonjs package.
  * @param  {name} name package name
@@ -27,6 +37,7 @@ function Loader() {
 Loader.prototype.use = function(name) {
   var mod = require(name);
   if(typeof mod === 'function'){
+    //slice arguments and pass to the package constructor
     mod.apply(null, toArray(arguments, 1));
   }
   return this;
