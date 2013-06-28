@@ -5,10 +5,7 @@ var toArray = require('toarray');
  * Expose `Loader`.
  */
 
-module.exports = function(){
-  //find something better
-  return new Loader();
-};
+module.exports = Loader;
 
 
 /**
@@ -17,8 +14,23 @@ module.exports = function(){
  * @api public
  */
 
-function Loader() {
-  //do something
+function Loader(obj) {
+  if (obj) return mixin(obj);
+}
+
+/**
+ * Mixin the emitter properties.
+ *
+ * @param {Object} obj
+ * @return {Object}
+ * @api private
+ */
+
+function mixin(obj) {
+  for (var key in Emitter.prototype) {
+    obj[key] = Emitter.prototype[key];
+  }
+  return obj;
 }
 
 
