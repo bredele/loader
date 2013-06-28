@@ -5,9 +5,9 @@ var toArray = require('toarray');
  * Expose `Loader`.
  */
 
-module.exports = function(path){
+module.exports = function(){
   //find something better
-  return new Loader(path);
+  return new Loader();
 };
 
 
@@ -17,9 +17,8 @@ module.exports = function(path){
  * @api public
  */
 
-function Loader(path) {
+function Loader() {
   //do something
-  this.path = path;
 }
 
 
@@ -40,7 +39,8 @@ function Loader(path) {
  */
 
 Loader.prototype.use = function(name) {
-  var mod = require(name, this.path);
+  //hack because can't require from loader
+  var mod = require.modules[name].exports;
   if(typeof mod === 'function'){
     mod.apply(null, toArray(arguments, 1));
   }
