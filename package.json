@@ -1,0 +1,29 @@
+{
+  "name": "amy-loader",
+  "version": "0.0.1",
+  "description": "Amy commonjs handler",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bredele/loader.git"
+  },
+  "keywords": [
+    "commonjs",
+    "mvc",
+    "package",
+    "require"
+  ],
+  "author": "Olivier Wietrich",
+  "license": "MIT",
+  "readmeFilename": "Readme.md",
+  "gitHead": "3106961d67a3d1ec695997fc1ba7623846bbee4f",
+  "bugs": {
+    "url": "https://github.com/bredele/loader/issues"
+  },
+  "devDependencies": {
+    "docco": "~0.6.2"
+  }
+}

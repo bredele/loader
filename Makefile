@@ -6,6 +6,23 @@ components: component.json
 	@component install --dev
 
 clean:
-	rm -fr build components template.js
+	rm -fr build components docs
+
+doc: docco
+
+	git checkout gh-pages
+
+	git checkout master docs
+	git add build docs
+
+	#add versionning
+	git commit -am "update DOC"
+
+	git push
+	git checkout master
+
+docco:
+	docco index.js
+
 
 .PHONY: clean
