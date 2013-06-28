@@ -5,7 +5,10 @@ var toArray = require('toarray');
  * Expose `Loader`.
  */
 
-module.exports = Loader;
+module.exports = function(){
+  //find something better
+  return new Loader();
+};
 
 
 /**
@@ -32,6 +35,7 @@ function Loader() {
 /**
  * Load commonjs package.
  * @param  {name} name package name
+ * @api public
  */
 
 Loader.prototype.use = function(name) {
