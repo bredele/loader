@@ -27,8 +27,8 @@ function Loader(obj) {
  */
 
 function mixin(obj) {
-  for (var key in Emitter.prototype) {
-    obj[key] = Emitter.prototype[key];
+  for (var key in Loader.prototype) {
+    obj[key] = Loader.prototype[key];
   }
   return obj;
 }
