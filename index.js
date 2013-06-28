@@ -39,7 +39,7 @@ function Loader() {
  */
 
 Loader.prototype.use = function(name) {
-  var mod = require(name);
+  var mod = require(require.resolve(name));
   if(typeof mod === 'function'){
     mod.apply(null, toArray(arguments, 1));
   }
