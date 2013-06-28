@@ -100,8 +100,22 @@ a constructor function.</p>
 
 Loader.prototype.use = <span class="keyword">function</span>(name) {
   <span class="keyword">var</span> mod = require(name);
-  <span class="keyword">if</span>(<span class="keyword">typeof</span> mod === <span class="string">'function'</span>){
-    mod.apply(<span class="literal">null</span>, toArray(arguments, <span class="number">1</span>));
+  <span class="keyword">if</span>(<span class="keyword">typeof</span> mod === <span class="string">'function'</span>){</pre></div></div>
+            
+        </li>
+        
+        
+        <li id="section-5">
+            <div class="annotation">
+              
+              <div class="pilwrap ">
+                <a class="pilcrow" href="#section-5">&#182;</a>
+              </div>
+              <p>slice arguments and pass to the package constructor</p>
+
+            </div>
+            
+            <div class="content"><div class='highlight'><pre>    mod.apply(<span class="literal">null</span>, toArray(arguments, <span class="number">1</span>));
   }
   <span class="keyword">return</span> <span class="keyword">this</span>;
 };
@@ -112,11 +126,11 @@ Loader.prototype.async = <span class="keyword">function</span>(name) {</pre></di
         </li>
         
         
-        <li id="section-5">
+        <li id="section-6">
             <div class="annotation">
               
               <div class="pilwrap ">
-                <a class="pilcrow" href="#section-5">&#182;</a>
+                <a class="pilcrow" href="#section-6">&#182;</a>
               </div>
               <p>use bredele/lazy-loading</p>
 
