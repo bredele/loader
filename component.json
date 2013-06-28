@@ -1,0 +1,16 @@
+{
+  "name": "loader",
+  "repo": "bredele/loader",
+  "description": "Simple commonjs handler for Amy.js",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "bredele/toarray": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js"
+  ]
+}
