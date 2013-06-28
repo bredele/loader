@@ -37,7 +37,6 @@ function Loader() {
 Loader.prototype.use = function(name) {
   var mod = require(name);
   if(typeof mod === 'function'){
-    //slice arguments and pass to the package constructor
     mod.apply(null, toArray(arguments, 1));
   }
   return this;
