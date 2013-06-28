@@ -14,7 +14,7 @@ doc: docco
 
 	git checkout master docs
 
-	git add build docs
+	git add docs
 
 	#add versionning
 	git commit -am "update DOC"
