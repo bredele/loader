@@ -9,7 +9,10 @@
 
 ## API
 
-   
+### Loader#use(name,...)
+
+  Require commonjs package and initialize package.
+  Pass other arguments to the package constructor.
 
 ## License
 
