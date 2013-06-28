@@ -39,9 +39,9 @@ function Loader() {
  */
 
 Loader.prototype.use = function(name) {
-  console.log(require.modules, require.resolve(name));
   //hack because can't require from loader
-  var mod = require.modules[require.resolve(name)].exports;
+  //var mod = require.modules[require.resolve(name)].exports;
+  var mode = require(name);
   if(typeof mod === 'function'){
     mod.apply(null, toArray(arguments, 1));
   }
