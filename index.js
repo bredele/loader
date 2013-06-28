@@ -40,7 +40,7 @@ function Loader() {
 
 Loader.prototype.use = function(name) {
   //hack because can't require from loader
-  var mod = require.modules[name].exports;
+  var mod = require.modules[require.resolve(name)].exports;
   if(typeof mod === 'function'){
     mod.apply(null, toArray(arguments, 1));
   }
