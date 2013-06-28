@@ -40,8 +40,7 @@ function Loader(path) {
  */
 
 Loader.prototype.use = function(name) {
-  var load = require.relative(this.path);
-  var mod = load(require.resolve(name));
+  var mod = require(name, this.path);
   if(typeof mod === 'function'){
     mod.apply(null, toArray(arguments, 1));
   }
