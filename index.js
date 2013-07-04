@@ -10,39 +10,21 @@ module.exports = Loader;
 
 /**
  * Initialize a new `Loader`.
+ * @param {Function} require function
  *
  * @api public
  */
 
-function Loader(obj) {
-  if (obj) return mixin(obj);
-}
-
-/**
- * Mixin the emitter properties.
- *
- * @param {Object} obj
- * @return {Object}
- * @api private
- */
-
-function mixin(obj) {
-  for (var key in Loader.prototype) {
-    obj[key] = Loader.prototype[key];
-  }
-  return obj;
+function Loader(loader) {
+  this.loader = loader;
 }
 
 
 // Loader use
 // ----------------
 
-// Loader use the `express syntax` because...I love it! 
-// The use function load a commonjs package by name and pass all
-// the other parameters to the package constructor.
-//
-// To be load by the Loader, your commonjs package has to expose
-// a constructor function.
+// 
+
 
 /**
  * Load commonjs package.
@@ -51,9 +33,7 @@ function mixin(obj) {
  */
 
 Loader.prototype.use = function(name) {
-  //hack because can't require from loader
-  //var mod = require.modules[require.resolve(name)].exports;
-  var mode = require(name);
+  var mode = loader(name);
   if(typeof mod === 'function'){
     mod.apply(null, toArray(arguments, 1));
   }
