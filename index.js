@@ -20,11 +20,6 @@ function Loader(loader) {
 }
 
 
-// Loader use
-// ----------------
-
-// 
-
 
 /**
  * Load commonjs package.
@@ -33,7 +28,7 @@ function Loader(loader) {
  */
 
 Loader.prototype.use = function(name) {
-  var mode = loader(name);
+  var mod = loader(name);
   if(typeof mod === 'function'){
     mod.apply(null, toArray(arguments, 1));
   }
