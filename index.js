@@ -28,7 +28,7 @@ function Loader(loader) {
  */
 
 Loader.prototype.use = function(name) {
-  var mod = loader(name);
+  var mod = this.loader(name);
   if(typeof mod === 'function'){
     mod.apply(null, toArray(arguments, 1));
   }
